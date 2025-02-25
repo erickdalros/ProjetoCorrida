@@ -6,7 +6,7 @@ Quando instalar o git no pc
 
 Para criação de um novo repositório:
 
-Abrir pasta clicando no botão direto - mais opções - git by bash
+Abrir pasta clicando no botão direto - mais opções - git by bash OU pode ser pelo terminal do visual code mesmo
 
 git status = ver se tem arquivos com status de descommit
 
@@ -22,7 +22,7 @@ git push origin master = faz a confirmação do commit e envia para o GitHub
 
 
 Quando for apenas commitar já com repositório criado:
-Abrir pasta clicando no botão direto - mais opções - git by bash
+Abrir pasta clicando no botão direto - mais opções - git by bash OU pode ser pelo terminal do visual code mesmo
 
 git status = ver se tem arquivos com status de descommit
 
