@@ -21,6 +21,8 @@ class App(customtkinter.CTk):
         self.logo_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "logo_sygma.png")), size=(26, 26))
         self.fundo_sygma_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "fundoSygma.png")), size=(800, 195))
         self.fundo_corrida_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "corridaSygma.png")), size=(800, 195))
+        self.fundo_eventos_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "eventoSygma.png")), size=(800, 195))
+        self.fundo_spotify_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "spotifySygma.png")), size=(800, 195))
         
 
         # Ícones dos botões de navegação
@@ -135,42 +137,75 @@ class App(customtkinter.CTk):
 
 # EVENTOS
     def create_third_frame(self):
-
-        """Cria o frame Corridas"""
+        """Cria o frame principal (Centro)"""
         frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         frame.grid_columnconfigure(0, weight=1)
 
-        buttons = [
-            ("Cadastro de Corredor", self.cadastro_image, self.cadastro_corredor),
-            ("Gerenciamento de Corrida", self.gerenciar_image, self.gerenciar_corrida),
-            ("Visualizar Tabela de Corredores", self.visualizar_image, self.visualizar_tabela),
-            ("Criar Novo Banco de Corrida", self.novo_banco_image, self.criar_novo_banco),
+        # Imagem principal
+        label = customtkinter.CTkLabel(frame, text="", image=self.fundo_eventos_image)
+        label.grid(row=0, column=0, padx=20, pady=10)
+
+        # Seção de notícias
+        news_frame = customtkinter.CTkFrame(frame, fg_color="transparent")
+        news_frame.grid(row=2, column=0, padx=20, pady=10, sticky="n")
+
+        title = customtkinter.CTkLabel(news_frame, text="Últimas Atualizações!", font=("Arial", 20, "bold"))
+        title.grid(row=0, column=0, padx=10, pady=5, columnspan=2)
+
+        noticias = [
+            (" Novo versionamento 1.0.6 do Devok Software!", "setaVermelha.png"),
+            (" Implementação de leitura de banco de dados .SQL!", "setaVermelha.png"),
+            (" Personalização própria para o software!", "setaVermelha.png")
         ]
 
-        for i, (text, img, command) in enumerate(buttons):
-            btn = customtkinter.CTkButton(frame, text=text, image=img, compound="left", command=command)
-            btn.grid(row=i, column=0, padx=20, pady=10)
+        for i, (noticia, img) in enumerate(noticias):
+            img_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "imagens", img)
+            noticia_imagem = customtkinter.CTkImage(Image.open(img_path), size=(30, 30))
+
+            news_image_label = customtkinter.CTkLabel(news_frame, text="", image=noticia_imagem)
+            news_image_label.grid(row=i+1, column=0, padx=10, pady=5, sticky="w")
+
+            news_text_label = customtkinter.CTkLabel(news_frame, text=noticia, font=("Arial", 14))
+            news_text_label.grid(row=i+1, column=1, padx=10, pady=5, sticky="w")
 
         return frame
 
 
+#SPOTIFY
     def create_four_frame(self):
-        """Cria o frame Corridas"""
+        """Cria o frame principal (Centro)"""
         frame = customtkinter.CTkFrame(self, corner_radius=0, fg_color="transparent")
         frame.grid_columnconfigure(0, weight=1)
 
-        buttons = [
-            ("Cadastro de Corredor", self.cadastro_image, self.cadastro_corredor),
-            ("Gerenciamento de Corrida", self.gerenciar_image, self.gerenciar_corrida),
-            ("Visualizar Tabela de Corredores", self.visualizar_image, self.visualizar_tabela),
-            ("Criar Novo Banco de Corrida", self.novo_banco_image, self.criar_novo_banco),
+        # Imagem principal
+        label = customtkinter.CTkLabel(frame, text="", image=self.fundo_spotify_image)
+        label.grid(row=0, column=0, padx=20, pady=10)
+
+        # Seção de notícias
+        news_frame = customtkinter.CTkFrame(frame, fg_color="transparent")
+        news_frame.grid(row=2, column=0, padx=20, pady=10, sticky="n")
+
+        title = customtkinter.CTkLabel(news_frame, text="Últimas Atualizações!", font=("Arial", 20, "bold"))
+        title.grid(row=0, column=0, padx=10, pady=5, columnspan=2)
+
+        noticias = [
+            (" Novo versionamento 1.0.6 do Devok Software!", "setaVermelha.png"),
+            (" Implementação de leitura de banco de dados .SQL!", "setaVermelha.png"),
+            (" Personalização própria para o software!", "setaVermelha.png")
         ]
 
-        for i, (text, img, command) in enumerate(buttons):
-            btn = customtkinter.CTkButton(frame, text=text, image=img, compound="left", command=command)
-            btn.grid(row=i, column=0, padx=20, pady=10)
+        for i, (noticia, img) in enumerate(noticias):
+            img_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "imagens", img)
+            noticia_imagem = customtkinter.CTkImage(Image.open(img_path), size=(30, 30))
+
+            news_image_label = customtkinter.CTkLabel(news_frame, text="", image=noticia_imagem)
+            news_image_label.grid(row=i+1, column=0, padx=10, pady=5, sticky="w")
+
+            news_text_label = customtkinter.CTkLabel(news_frame, text=noticia, font=("Arial", 14))
+            news_text_label.grid(row=i+1, column=1, padx=10, pady=5, sticky="w")
 
         return frame
+
 
 
 
