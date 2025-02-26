@@ -32,10 +32,10 @@ class App(customtkinter.CTk):
         self.add_spotify_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "spotify_dark.png")), size=(20, 20))
 
         # Ícones dos botões do frame Corrida
-        self.cadastro_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "logo_sygma.png")), size=(20, 20))
-        self.gerenciar_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "logo_sygma.png")), size=(20, 20))
-        self.visualizar_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "logo_sygma.png")), size=(20, 20))
-        self.novo_banco_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "logo_sygma.png")), size=(20, 20))
+        self.cadastro_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "corredor.png")), size=(25, 25))
+        self.gerenciar_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "crono.png")), size=(25, 25))
+        self.visualizar_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "tabela.png")), size=(25, 25))
+        self.novo_banco_image = customtkinter.CTkImage(Image.open(os.path.join(image_path, "banco.png")), size=(25, 25))
 
         # Frame de navegação (menu lateral)
         self.navigation_frame = customtkinter.CTkFrame(self, corner_radius=0)
