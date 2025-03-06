@@ -1,0 +1,35 @@
+Quando instalar o git no pc
+ git config --global user.name "seu nome de usuário"
+ git config --global user.email "seuemail@gmail.com"
+ git config --list
+
+
+Para criação de um novo repositório:
+
+Abrir pasta clicando no botão direto - mais opções - git by bash OU pode ser pelo terminal do visual code mesmo
+
+git status = ver se tem arquivos com status de descommit
+
+git init = usar apenas quando quiser transformar uma pasta em um repositório
+
+git add "nomeArquivo" ou git add . = Quando usar o nomeArquivo ele adiciona apenas o arquivo, quando usar o ponto(.) ele adiciona tudo do repositório
+
+git commit -a -m "versionamento 1.0.1" = ele commita os arquivos em local host
+
+git remote add origin https://github.com/erickdalros/ProjetoCorrida.git = ele joga para o GitHub os arquivos. (ProjetoCorrida é o nome do repositório) (Usar apenas na primeira vez quando for configurar um novo diretório)
+
+git push origin master = faz a confirmação do commit e envia para o GitHub
+
+
+Quando for apenas commitar já com repositório criado:
+Abrir pasta clicando no botão direto - mais opções - git by bash OU pode ser pelo terminal do visual code mesmo
+
+git status = ver se tem arquivos com status de descommit
+
+git add "nomeArquivo" ou git add . = Quando usar o nomeArquivo ele adiciona apenas o arquivo, quando usar o ponto(.) ele adiciona tudo do repositório
+
+git commit -a -m "versionamento 1.0.1" = ele commita os arquivos em local host
+
+git push origin master = faz a confirmação do commit e envia para o GitHub
+
+

@@ -1,0 +1,14 @@
+
+
+O que precisa no cadastro de corredor?
+    - Número
+    - Nome Completo
+    - Data Nascimento
+    - Gênero
+    - Equipe
+    - Telefone
+    - tempo 
+
+
+
+pace: tempo gasto dividido pela distância
