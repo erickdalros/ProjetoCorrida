@@ -1,6 +1,6 @@
 Quando instalar o git no pc
  git config --global user.name "seu nome de usuário"
- git config --global user.email "seuemail@gmail.com"
+ git config --global user.email "seuemail@gmail.com" 
  git config --list
 
 
