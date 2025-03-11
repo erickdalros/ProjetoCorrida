@@ -65,7 +65,7 @@ class App(ctk.CTk): #Classe padrão da interface gráfica
         self.home_frame = self.create_home_frame()
         self.second_frame = self.create_second_frame()
         self.third_frame = self.create_third_frame()
-        self.four_frame = self.create_four_frame()
+        self.four_frame = self.create_four_frame() 
 
         # Definir o frame inicial (default)
         self.select_frame_by_name("home")
