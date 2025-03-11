@@ -311,6 +311,12 @@ class App(ctk.CTk): #Classe padrão da interface gráfica
             numero = ctk.CTkEntry(root, width=350, placeholder_text="Digite o número do corredor...")
             numero.pack(pady=(0, 20))   
 
+            titulo = ctk.CTkLabel(root, text="Nome do Corredor:")
+            titulo.pack(pady=(10, 0))
+            nome = ctk.CTkEntry(root, width=350, placeholder_text="Digite o nome do corredor...")
+            nome.pack(pady=(0, 20))  
+
+
             # Data de Nascimento
             titulo = ctk.CTkLabel(root, text="Data de Nascimento do Corredor:")
             titulo.pack(pady=(10, 0))
@@ -344,14 +350,15 @@ class App(ctk.CTk): #Classe padrão da interface gráfica
                 cursor = conn.cursor()
                 cursor.execute("""
                 CREATE TABLE IF NOT EXISTS corredores (
-                    numero TEXT,
-                    data_nascimento TEXT,
-                    genero TEXT,
+                    numero INTEGER PRIMARY KEY AUTOINCREMENT,
+                    nome_completo TEXT NOT NULL,
+                    data_nascimento DATE NOT NULL,
+                    genero TEXT NOT NULL CHECK(genero IN ('Masculino', 'Feminino')),
                     equipe TEXT,
-                    telefone TEXT
+                    telefone NUMBER,
                 )
                 """)
-                cursor.execute("INSERT INTO corredores (numero, data_nascimento, genero, equipe, telefone) VALUES (?, ?, ?, ?, ?)",
+                cursor.execute("INSERT INTO corredores (numero, nome, data_nascimento, genero, equipe, telefone) VALUES (?, ?, ?, ?, ?, ?)",
                                (numero.get(), data_nascimento.get(), genero_var.get(), equipe.get(), telefone.get()))
                 conn.commit()
                 conn.close()
@@ -377,7 +384,7 @@ class App(ctk.CTk): #Classe padrão da interface gráfica
 
     def visualizar_tabela(self):
         print("Abrir tabela de corredores")
-
+    # Criação de um novo banco de corrida
     def criar_novo_banco(self):
         dialog = ctk.CTkInputDialog(text="Digite o nome do novo banco de Corrida:", title="Criar Novo Banco de Corrida")
         nome_banco = dialog.get_input()
